@@ -12,14 +12,14 @@ all: build tag
 
 .PHONY: build
 build:
-        ${CONTAINER_SUBSYS} build ${BUILD_ARGS} -t ${IMAGE_NAME}:${GIT_HASH} .
+	${CONTAINER_SUBSYS} build ${BUILD_ARGS} -t ${IMAGE_NAME}:${GIT_HASH} .
 
 .PHONY: tag
 tag:
-        ${CONTAINER_SUBSYS} tag ${IMAGE_NAME}:${GIT_HASH} ${IMAGE_NAME}:latest
+	${CONTAINER_SUBSYS} tag ${IMAGE_NAME}:${GIT_HASH} ${IMAGE_NAME}:latest
 
 .PHONY: cleanup-bootstrap
 cleanup-bootstrap:
-        ${CONTAINER_SUBSYS} stop bootstrap
-        ${CONTAINER_SUBSYS} rm bootstrap
+	${CONTAINER_SUBSYS} stop bootstrap
+	${CONTAINER_SUBSYS} rm bootstrap
 
